@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="actions">
+    <%= form.text_field "title"%>
+    <%= form.text_area "text"%>
+    <%= form.collection_select(:category_id, Category.all, :id, :name)%>
+    <%= form.hidden_field(:user_id, :value => current_user.id)%>
     <%= form.submit %>
   </div>
 <% end %>
