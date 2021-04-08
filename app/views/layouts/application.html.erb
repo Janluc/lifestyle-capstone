@@ -11,10 +11,20 @@
   </head>
 
   <body>
+
+  <nav>
+    <% if logged_in?%>
+      <p><%=current_user.name%> </p>
+    <% end %>
+
+    <ul>
+      <% main_categories.each do |category|%>
+        <li><%=link_to "#{category.name}", category%></li>
+      <% end %>
+    </ul>
+  </nav>
   
-  <% if logged_in?%>
-    <p><%=current_user.name%> </p>
-  <% end %>
+  
     <%= yield %>
   </body>
 </html>
