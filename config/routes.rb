@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :articles
   resources :users, only: [:new, :create]
   get 'login', to: "users#new_session"
