@@ -3,9 +3,7 @@ class VotesController < ApplicationController
   def create
     @vote = current_user.votes.new(article_id: params[:article_id])
 
-    if @vote.save
-      redirect_to articles_path
-    end
+    redirect_to articles_path if @vote.save
   end
 
   # DELETE /votes/1 or /votes/1.json
@@ -16,5 +14,4 @@ class VotesController < ApplicationController
       redirect_to articles_path
     end
   end
-
 end

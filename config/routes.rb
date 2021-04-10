@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root "users#new"
+  root "articles#index"
 
   resources :categories
   resources :articles do

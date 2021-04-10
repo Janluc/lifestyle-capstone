@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     @latest_article = Article.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC').first
     @articles = Article.all
   end
-  
+
   # GET /articles/new
   def new
     @article = Article.new
@@ -26,12 +26,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-
   private
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :text, :user_id, :category_id, :image)
-    end
-    
+  # Only allow a list of trusted parameters through.
+  def article_params
+    params.require(:article).permit(:title, :text, :user_id, :category_id, :image)
+  end
 end

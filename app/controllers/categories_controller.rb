@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
-
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: %i[new create]
 
   # GET /categories or /categories.json
   def index
@@ -10,7 +9,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1 or /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @articles = @category.articles.order("id DESC").all
+    @articles = @category.articles.order('id DESC').all
   end
 
   # GET /categories/new
@@ -24,7 +23,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: "Category was successfully created." }
+        format.html { redirect_to @category, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -32,10 +31,11 @@ class CategoriesController < ApplicationController
       end
     end
   end
+
   private
 
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name)
-    end
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name)
+  end
 end
