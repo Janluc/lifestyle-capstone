@@ -22,7 +22,7 @@
           </ul>
           <div class="col-4 text-center">
             <% if logged_in?%>
-              <%= link_to "#{current_user.name}", class: "nav-link d-inline"%>
+              <%= link_to "#{current_user.name}", current_user, class: "nav-link d-inline"%>
               <%= link_to "Create new Article", new_article_path, class: "nav-link d-inline"%>
               <%= link_to 'logout', logout_path, method: "post", class: "nav-link d-inline"%>
               <% else %>

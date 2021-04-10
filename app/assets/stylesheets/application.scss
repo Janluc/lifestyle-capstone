@@ -103,6 +103,17 @@ nav{
     }
 }
 
+.user-articles{
+    a{
+        text-decoration: none;
+        color:#ED8925;
+        transition: color 0.2s;
+    }
+    a:hover{
+        color: white;
+    }
+}
+
 .form-information{
     margin-left: 300px;
     margin-right: 300px;

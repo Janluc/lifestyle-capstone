@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :votes, only: [:create, :destroy]
   end
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   get 'login', to: "users#new_session"
   post 'login', to: "users#create_session"
   post 'logout', to: "users#destroy_session"
