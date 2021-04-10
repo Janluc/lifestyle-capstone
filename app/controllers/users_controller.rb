@@ -24,9 +24,15 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to articles_url
     else
-      render @user
+      redirect_to login_path
     end
   end
+
+  def destroy_session
+    reset_session
+    redirect_to '/login'
+  end
+
 
   private
 

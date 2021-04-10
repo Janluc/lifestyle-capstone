@@ -15,6 +15,7 @@
   <nav>
     <% if logged_in?%>
       <p><%=current_user.name%> </p>
+      <%= link_to 'logout', logout_path, method: "post"%>
     <% end %>
 
     <ul>
