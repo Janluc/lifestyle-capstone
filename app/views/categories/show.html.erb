@@ -8,7 +8,9 @@
                     <h3><%=@category.name%></h3>
                     <h4><%=article.title%> </h4>
                     <p><%=article.text%> </p>
+                    <%= vote_btn(article)%>
                 </div>
+                
             </article>
             <%counter += 1%>
         <% else %>
@@ -17,8 +19,10 @@
                     <h3><%=@category.name%></h3>
                     <h4><%=article.title%> </h4>
                     <p><%=article.text%> </p>
+                    <%= vote_btn(article)%>
                 </div>
                 <img src="https://via.placeholder.com/380x350" class="img-fluid"  alt="">
+                
             </article>
             <% if counter < 3 %>
               <%counter += 1%>

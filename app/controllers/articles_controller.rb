@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @latest_article = Article.last
+    @latest_article = Article.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC').first
     @articles = Article.all
   end
   
