@@ -9,7 +9,7 @@
                     <h3><%=@category.name%></h3>
                     <h4><%=article.title%> </h4>
                     <p><%=article.text%> </p>
-                    <p>- <%=article.user.name%></p>
+                     <%=link_to "- #{article.user.name}", article.user%>
                     <%= vote_btn(article)%>
                 </div>
             <%counter += 1%>
@@ -18,7 +18,7 @@
                     <h3><%=@category.name%></h3>
                     <h4><%=article.title%> </h4>
                     <p><%=article.text%> </p>
-                    <p>- <%=article.user.name%></p>
+                    <%=link_to "- #{article.user.name}", article.user%>
                     <%= vote_btn(article)%>
                 </div>
                 <img src="<%=article.image%>" class="img-fluid"  alt="">

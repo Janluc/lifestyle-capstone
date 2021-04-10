@@ -3,7 +3,7 @@
     <h5 class="text-white">List of articles made by <%=@user.name%>:</h5>
     <div class="row user-articles">
         <% @user.articles.each do |article|%>
-            <a class="col-6 text-center">
+            <a class="col-6 text-center" href="/categories/<%=article.category.id%>">
                 <h3><%=article.title%></h3>
                 <p><%=article.category.name%></p>
             </a>

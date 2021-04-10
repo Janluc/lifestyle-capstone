@@ -101,6 +101,13 @@ nav{
         -webkit-line-clamp: 6; // max nb lines to show
         -webkit-box-orient: vertical;
     }
+    a{
+        color: black;
+        transition: color 0.2s;
+    }
+    a:hover{
+        color: #ED8925;
+    }
 }
 
 .user-articles{
