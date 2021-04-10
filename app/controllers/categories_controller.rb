@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  skip_before_action :require_login, only: [:new, :create]
+
   # GET /categories or /categories.json
   def index
     @categories = Category.all

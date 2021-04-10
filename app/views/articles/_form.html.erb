@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="actions  d-flex flex-column">
+  <div class="actions d-flex flex-column my-4">
     <div class="bg-light container px-5">
       <p>Title</p>
       <%= form.text_field "title", class: "form-control"%>
       <p>Text</p>
       <%= form.text_area "text", class: "form-control"%>
+      <p>Image URL</p>
+      <%= form.text_field "image", class: "form-control"%>
       <p>Category</p>
       <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {:class =>"form-control"})%>
       <%= form.hidden_field(:user_id, :value => current_user.id)%>

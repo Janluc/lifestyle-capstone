@@ -16,7 +16,11 @@ class ApplicationController < ActionController::Base
     def main_categories
        categ = Category.all
        
-       categ[0..3]
+       if categ.length() >= 4
+            return categ[0..3]
+       else
+            return categ[0..categ.length() - 1]
+       end
     end
 
     def category_latest(category_name)

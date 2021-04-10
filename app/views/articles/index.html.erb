@@ -1,22 +1,29 @@
 
-
-<div class="w-100 featured-article d-flex align-items-end" style="background: url('https://via.placeholder.com/1920x720')">
-    <div>
-        <h3 class="d-block"><%=@latest_article.title%></h3>
-        <p class="d-block"><%=@latest_article.text%></p>
+<% if @latest_article %>
+    <div class="w-100 featured-article d-flex align-items-end text-white" style="background: url('<%=@latest_article.image%>')">
+        <div class="latest-article-info m-3 p-3">
+            <h3 class="d-block c-orange f-bold"><%=@latest_article.title%></h3>
+            <p class="d-block"><%=@latest_article.text%></p>
+        </div>
     </div>
-</div>
+<% end %>
 
-<div class="d-flex">
-    <% main_categories.each do |category|%>
-        <a href="/categories/<%=category.id%>" class="flex-grow-1 category-articles pt-3  " style="background: red">
+
+<div class="d-flex main-featured">
+<% if main_categories.length() > 3 %>
+      <% main_categories.each do |category|%>
+      <% if !category_latest(category.name).nil? %>
+        <a href="/categories/<%=category.id%>" class="flex-grow-1 category-articles pt-3" style="background: url('<%=category_latest(category.name).image%>')">
             <h5><%=category.name%> </h5>
             <div class="d-flex h-75 align-items-end">
                 <div>
                     <h3><%=category_latest(category.name).title%></h3>
                 </div>
             </div>
-            
         </a>
+      <% end %>
+        
     <% end %>
+<% end %>
+
 </div>
