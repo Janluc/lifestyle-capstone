@@ -24,9 +24,6 @@ class ApplicationController < ActionController::Base
         categ.articles.last
     end
 
-    
-
-    private
     def require_login
         unless current_user
           redirect_to login_path

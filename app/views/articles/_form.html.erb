@@ -11,11 +11,17 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.text_field "title"%>
-    <%= form.text_area "text"%>
-    <%= form.collection_select(:category_id, Category.all, :id, :name)%>
-    <%= form.hidden_field(:user_id, :value => current_user.id)%>
-    <%= form.submit %>
+  <div class="actions  d-flex flex-column">
+    <div class="bg-light container px-5">
+      <p>Title</p>
+      <%= form.text_field "title", class: "form-control"%>
+      <p>Text</p>
+      <%= form.text_area "text", class: "form-control"%>
+      <p>Category</p>
+      <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {:class =>"form-control"})%>
+      <%= form.hidden_field(:user_id, :value => current_user.id)%>
+      <%= form.submit  class: "btn btn-warning m-3"%>
+    </div>
+    
   </div>
 <% end %>

@@ -9,7 +9,7 @@
 
 <div class="d-flex">
     <% main_categories.each do |category|%>
-        <div class="flex-grow-1 category-articles pt-3  " style="background: red">
+        <a href="/categories/<%=category.id%>" class="flex-grow-1 category-articles pt-3  " style="background: red">
             <h5><%=category.name%> </h5>
             <div class="d-flex h-75 align-items-end">
                 <div>
@@ -17,6 +17,6 @@
                 </div>
             </div>
             
-        </div>
+        </a>
     <% end %>
 </div>

@@ -22,7 +22,7 @@
       </ul>
       <div class="d-flex">
         <% if logged_in?%>
-          <p><%=current_user.name%> </p>
+          <%= link_to "#{current_user.name}, Create new Article", new_article_path, class: "nav-link"%>
           <%= link_to 'logout', logout_path, method: "post", class: "nav-link"%>
           <% else %>
           <%= link_to 'login', login_path, class: "nav-link"%>

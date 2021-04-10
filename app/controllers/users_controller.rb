@@ -32,6 +32,7 @@ class UsersController < ApplicationController
 
   def destroy_session
     reset_session
+    current_user = nil
     redirect_to '/login'
   end
 

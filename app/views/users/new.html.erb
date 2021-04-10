@@ -1,5 +1,12 @@
-<h1>Users#new</h1>
-<%= form_with model: @user do |form|%>
-    <%= form.text_field :name %>
-    <%= form.submit %>
-<% end %>
+<h1 class="text-center p-5">Sign Up</h1>
+
+<div class="form-information">
+    <div class="bg-light px-5 py-1">
+        <%= form_with model: @user do |form|%>
+            <p>Username</p>
+            <%= form.text_field :name, class: "form-control"%>
+            <%= form.submit "sign up", class: "btn btn-warning m-3" %>
+        <% end %>
+    </div>
+</div>
+
