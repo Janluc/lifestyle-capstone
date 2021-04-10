@@ -12,20 +12,34 @@
 
   <body>
 
-  <nav>
-    <% if logged_in?%>
-      <p><%=current_user.name%> </p>
-      <%= link_to 'logout', logout_path, method: "post"%>
-    <% end %>
+  <nav class="navbar bg-light">
+    <div class="navbar-main d-flex flex-row justify-content-around">
 
-    <ul>
-      <% main_categories.each do |category|%>
-        <li><%=link_to "#{category.name}", category%></li>
-      <% end %>
-    </ul>
+      <ul class="navbar-nav d-flex flex-row justify-content-around navbar-list">
+        <% main_categories.each do |category|%>
+          <li class="nav-item"><%=link_to "#{category.name}", category, class: "nav-link"%></li>
+        <% end %>
+      </ul>
+      <div class="d-flex">
+        <% if logged_in?%>
+          <p><%=current_user.name%> </p>
+          <%= link_to 'logout', logout_path, method: "post", class: "nav-link"%>
+          <% else %>
+          <%= link_to 'login', login_path, class: "nav-link"%>
+          <%= link_to 'sign up', new_user_path, class: "nav-link"%>
+        <% end %>
+      </div>
+    </div>
+
   </nav>
   
   
     <%= yield %>
   </body>
+
+  <footer>
+    <div class="container">
+      <p>text </p>
+    </div>
+  </footer>
 </html>

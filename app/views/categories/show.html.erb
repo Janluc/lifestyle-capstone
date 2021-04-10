@@ -1,3 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Back', categories_path %>
+<div class="row">
+    <%counter = 0%>
+    <% @articles.each do |article|%>
+        <% if counter <= 1 %>
+            <article class="col-6 d-flex overflow-hidden article-block">
+                <img src="https://via.placeholder.com/380x350" class="img-fluid"  alt="">
+                <div class="category-info p-3">
+                    <h3><%=@category.name%></h3>
+                    <h4><%=article.title%> </h4>
+                    <p><%=article.text%> </p>
+                </div>
+            </article>
+            <%counter += 1%>
+        <% else %>
+            <article class="col-6 d-flex overflow-hidden article-block">
+                <div class="category-info p-3">
+                    <h3><%=@category.name%></h3>
+                    <h4><%=article.title%> </h4>
+                    <p><%=article.text%> </p>
+                </div>
+                <img src="https://via.placeholder.com/380x350" class="img-fluid"  alt="">
+            </article>
+            <% if counter < 3 %>
+              <%counter += 1%>
+              <% else  counter = 0%>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>

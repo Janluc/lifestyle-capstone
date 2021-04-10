@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
     helper_method :logged_in?
     helper_method :main_categories
     helper_method :category_latest
+    before_action :require_login
     
     def current_user
         User.find_by(id: session[:user_id])
@@ -22,4 +23,11 @@ class ApplicationController < ActionController::Base
         categ = Category.find_by(name: category_name)
         categ.articles.last
     end
+
+    private
+    def require_login
+        unless current_user
+          redirect_to login_path
+        end
+      end
 end

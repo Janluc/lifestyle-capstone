@@ -13,5 +13,47 @@
  *= require_tree .
  *= require_self
  */
-
+// CSS reset
+article{
+    padding: 0 !important;
+}
  @import "bootstrap";
+
+ .navbar{
+    flex-direction: row;
+    justify-content: space-between;
+ }
+.navbar-main{
+    width: 100%;
+}
+
+.featured-article{
+    height: 720px;
+}
+
+.category-articles{
+    height: 200px;
+}
+
+.navbar-list{
+    flex: 1
+}
+
+.category-info{
+    width: 25em;
+}
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+.article-block{
+    height: 350px;
+    p{
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 8; // max nb lines to show
+        -webkit-box-orient: vertical;
+    }
+}

@@ -8,6 +8,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @category = Category.find(params[:id])
+    @articles = @category.articles.order("id DESC").all
   end
 
   # GET /categories/new
