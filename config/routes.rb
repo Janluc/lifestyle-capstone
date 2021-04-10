@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  root "users#new"
+
   resources :categories
   resources :articles do
     resources :votes, only: [:create, :destroy]
