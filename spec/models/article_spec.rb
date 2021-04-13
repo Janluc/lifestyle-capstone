@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
@@ -43,3 +44,4 @@ RSpec.describe Article, type: :model do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

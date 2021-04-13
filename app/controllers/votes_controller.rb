@@ -1,3 +1,4 @@
+# rubocop:disable Style/GuardClause
 class VotesController < ApplicationController
   # POST /votes or /votes.json
   def create
@@ -15,3 +16,4 @@ class VotesController < ApplicationController
     end
   end
 end
+# rubocop:enable Style/GuardClause
