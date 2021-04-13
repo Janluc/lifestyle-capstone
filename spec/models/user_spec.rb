@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
 
     it 'checks if user has created an article' do
       user = User.new
-      user.save
+      user.save(validate: false)
       user.articles.create({ title: 'title', text: 'text' })
       expect(user.articles.empty?).to eq(false)
     end
