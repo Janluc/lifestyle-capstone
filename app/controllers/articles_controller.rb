@@ -16,14 +16,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    respond_to do |format|
       if @article.save
         redirect_to articles_path
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        render @article
       end
-    end
   end
 
   private
