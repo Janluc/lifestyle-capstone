@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-// CSS reset
 article {
   padding: 0 !important;
 }
@@ -46,10 +45,6 @@ nav {
     color: #4f4540;
   }
 
-  a:hover {
-    color: #ed8925;
-  }
-
   font-size: 24px;
 }
 
@@ -59,10 +54,6 @@ nav {
     padding: 1em;
     text-decoration: none;
     transition: color 0.2s;
-  }
-
-  a:hover {
-    color: #ed8925
   }
 
   h5 {
@@ -125,9 +116,6 @@ nav {
     transition: color 0.2s;
   }
 
-  a:hover {
-    color: #ed8925;
-  }
 }
 
 .user-articles {
@@ -135,10 +123,6 @@ nav {
     text-decoration: none;
     color: #ed8925;
     transition: color 0.2s;
-  }
-
-  a:hover {
-    color: white;
   }
 }
 
@@ -168,4 +152,28 @@ footer {
   bottom: 0;
   height: 60px;
   width: 100%;
+}
+
+.main-featured {
+  a:hover {
+    color: #ed8925
+  }
+}
+
+nav {
+  a:hover {
+    color: #ed8925;
+  }
+}
+
+.article-block {
+  a:hover {
+    color: #ed8925;
+  }
+}
+
+.user-articles {
+  a:hover {
+    color: white;
+  }
 }
