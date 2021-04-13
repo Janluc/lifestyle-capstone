@@ -14,86 +14,102 @@
  *= require_self
  */
 // CSS reset
-article{
+article {
     padding: 0 !important;
 }
- @import "bootstrap";
 
- html{
-     position: relative;
-     min-height: 100%;
- }
- body{
-     background-color: #4E443F;
-     background-size: cover;
+@import "bootstrap";
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: #4E443F;
+    background-size: cover;
     margin-bottom: 65px;
- }
- .c-orange{
+}
+
+.c-orange {
     color: #ED8925;
- }
- .f-bold{
-     font-weight: bold;
- }
- .main-featured{
-     a{
-         color: white;
-         padding: 1em;
-         text-decoration: none;
-         transition: color 0.2s;
-     }
-     a:hover{
-         color:#ED8925
-     }
-     h5{
-        text-decoration: underline; 
-     }
- }
-nav{
+}
+
+.f-bold {
+    font-weight: bold;
+}
+
+.main-featured {
+    a {
+        color: white;
+        padding: 1em;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    a:hover {
+        color: #ED8925
+    }
+
+    h5 {
+        text-decoration: underline;
+    }
+}
+
+nav {
     background-color: #FFFFFF;
-    a{
+
+    a {
         color: #4F4540;
     }
-    a:hover{
+
+    a:hover {
         color: #ED8925;
     }
+
     font-size: 24px;
 }
- .navbar{
+
+.navbar {
     flex-direction: row;
     justify-content: space-between;
- }
-.navbar-main{
+}
+
+.navbar-main {
     width: 100%;
 }
 
-.featured-article{
+.featured-article {
     height: 720px;
 }
 
-.latest-article-info{
+.latest-article-info {
     background: rgba($color: #292b2c, $alpha: 0.5)
 }
 
-.category-articles{
+.category-articles {
     height: 300px;
     background-size: cover !important;
 }
 
-.navbar-list{
+.navbar-list {
     flex: 1
 }
 
-.category-info{
+.category-info {
     width: 25em;
     background-color: #FFFFFF;
 }
+
 .row {
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
 }
-.article-block{
+
+.article-block {
     height: 350px;
-    p{
+
+    p {
         display: inline-block;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -101,44 +117,50 @@ nav{
         -webkit-line-clamp: 6; // max nb lines to show
         -webkit-box-orient: vertical;
     }
-    a{
+
+    a {
         color: black;
         transition: color 0.2s;
     }
-    a:hover{
+
+    a:hover {
         color: #ED8925;
     }
 }
 
-.user-articles{
-    a{
+.user-articles {
+    a {
         text-decoration: none;
-        color:#ED8925;
+        color: #ED8925;
         transition: color 0.2s;
     }
-    a:hover{
+
+    a:hover {
         color: white;
     }
 }
 
-.form-information{
+.form-information {
     margin-left: 300px;
     margin-right: 300px;
-    p{
+
+    p {
         font-size: 32px;
     }
 }
 
-.ordered-articles{
-    img{
+.ordered-articles {
+    img {
         height: 350px;
         width: 377px;
     }
 }
-.main-content{
+
+.main-content {
     margin: 5px;
 }
-footer{
+
+footer {
     font-size: 20px;
     position: absolute;
     bottom: 0;
