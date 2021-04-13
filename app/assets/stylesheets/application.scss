@@ -45,6 +45,10 @@ nav {
     color: #4f4540;
   }
 
+  a:hover {
+    color: #ed8925;
+  }
+
   font-size: 24px;
 }
 
@@ -56,12 +60,14 @@ nav {
     transition: color 0.2s;
   }
 
+  a:hover {
+    color: #ed8925;
+  }
+
   h5 {
     text-decoration: underline;
   }
 }
-
-
 
 .navbar {
   flex-direction: row;
@@ -103,7 +109,6 @@ nav {
   height: 350px;
 
   p {
-    display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -116,6 +121,9 @@ nav {
     transition: color 0.2s;
   }
 
+  a:hover {
+    color: #ed8925;
+  }
 }
 
 .user-articles {
@@ -123,6 +131,10 @@ nav {
     text-decoration: none;
     color: #ed8925;
     transition: color 0.2s;
+  }
+
+  a:hover {
+    color: white;
   }
 }
 
@@ -152,28 +164,4 @@ footer {
   bottom: 0;
   height: 60px;
   width: 100%;
-}
-
-.main-featured {
-  a:hover {
-    color: #ed8925
-  }
-}
-
-nav {
-  a:hover {
-    color: #ed8925;
-  }
-}
-
-.article-block {
-  a:hover {
-    color: #ed8925;
-  }
-}
-
-.user-articles {
-  a:hover {
-    color: white;
-  }
 }
