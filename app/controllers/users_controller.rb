@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(articles: :category).find(params[:id])
+    @articles = @user.articles
   end
 
   def new_session
