@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-  validates :title, presence: true
-  validates :text, presence: true
+  validates :title, presence: true, length: {minimum: 4}
+  validates :text, presence: true, length: {minimum: 10}
   validates :image, presence: true
 
   belongs_to :user
