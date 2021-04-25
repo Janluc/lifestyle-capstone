@@ -1,12 +1,17 @@
 <h1 class="text-center p-5 c-orange">Sign Up</h1>
 
 <div class="form-information">
-    <div class="bg-light px-5 py-1">
-        <%= form_with model: @user do |form|%>
-            <p>Username</p>
-            <%= form.text_field :name, class: "form-control"%>
-            <%= form.submit "Sign Up", class: "btn btn-warning m-3" %>
-        <% end %>
+  <% flash.each do |type, msg| %>
+    <div class="bg-light p-4 my-3">
+      <p><%=msg%></p>
     </div>
+  <% end %>
+  <div class="bg-light px-5 py-1">
+      <%= form_with model: @user do |form|%>
+          <p>Username</p>
+          <%= form.text_field :name, class: "form-control"%>
+          <%= form.submit "Sign Up", class: "btn btn-warning m-3" %>
+      <% end %>
+  </div>
 </div>
 
