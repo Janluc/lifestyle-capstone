@@ -27,9 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
 gem 'bootstrap', '~> 5.0.0.beta2'
+gem 'bullet'
 gem 'jquery-rails'
-gem "bullet"
-
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

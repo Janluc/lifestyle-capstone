@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to articles_url
     else
-      redirect_to new_user_path, alert: "Invalid Username"
+      redirect_to new_user_path, alert: 'Invalid Username'
     end
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to articles_url
     else
-      redirect_to login_path, alert: "Invalid Username"
+      redirect_to login_path, alert: 'Invalid Username'
     end
   end
 
