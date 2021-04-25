@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root "articles#index"
 
-  resources :categories
+  resources :categories, only:[:new, :create, :index, :show]
   resources :articles do
     resources :votes, only: [:create, :destroy]
   end
