@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "articles#index"
 
   resources :categories, only:[:new, :create, :index, :show]
-  resources :articles do
+  resources :articles, only:[:index, :new, :create] do
     resources :votes, only: [:create, :destroy]
   end
   resources :users, only: [:new, :create, :show]
