@@ -23,7 +23,7 @@
 - with the console still open, type in 'rails db:migrate'
 - afterwards type 'rails s'
 - Open your browser and in the address bar type 'http://localhost:3000/'
-- You should be able to make an account, and make posts, like posts, and accept/reject friends
+- You should be able to make an account, make articles, and vote on different articles
 
 ### Live Demo
 - https://immense-refuge-77482.herokuapp.com/
