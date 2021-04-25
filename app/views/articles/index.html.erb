@@ -10,20 +10,5 @@
 
 
 <div class="d-flex main-featured">
-<% if main_categories.length() > 3 %>
-      <% main_categories.each do |category|%>
-      <% if !category_latest(category.name).nil? %>
-        <a href="/categories/<%=category.id%>" class="flex-grow-1 category-articles pt-3" style="background: url('<%=category_latest(category.name).image%>')">
-            <h5><%=category.name%> </h5>
-            <div class="d-flex h-75 align-items-end">
-                <div>
-                    <h3><%=category_latest(category.name).title%></h3>
-                </div>
-            </div>
-        </a>
-      <% end %>
-        
-    <% end %>
-<% end %>
-
+  <%=show_main_categories(main_categories)%>
 </div>
