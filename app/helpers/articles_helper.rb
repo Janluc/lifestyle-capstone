@@ -17,7 +17,7 @@ module ArticlesHelper
       end.join.html_safe
     end
   end
-
+  
   def upvoted_article(article)
     if article
       content_tag(:div, class: %w[w-100 featured-article d-flex align-items-end text-white], style: "background: url('#{article.image}')") do
@@ -36,20 +36,20 @@ module ArticlesHelper
         if counter <= 1
           concat content_tag(:img, nil, src: article.image.to_s, class: 'img-fluid')
           concat(content_tag(:div, class: %w[category-info p-3]) do
-            "#{content_tag(:h3, category.name.to_s)}
-            #{content_tag(:h4, article.title.to_s)}
-            #{content_tag(:p, article.text.to_s)}
-            #{link_to(article.user.name.to_s, article.user)}
-            #{vote_btn(article)}"
+            concat content_tag(:h3, category.name.to_s)
+            concat content_tag(:h4, article.title.to_s)
+            concat content_tag(:p, article.text.to_s)
+            concat link_to(article.user.name.to_s, article.user)
+            concat vote_btn(article)
           end)
           counter += 1
         else
           concat(content_tag(:div, class: %w[category-info p-3]) do
-            "#{content_tag(:h3, category.name.to_s)}
-            #{content_tag(:h4, article.title.to_s)}
-            #{content_tag(:p, article.text.to_s)}
-            #{link_to(article.user.name.to_s, article.user)}
-            #{vote_btn(article)}"
+            concat content_tag(:h3, category.name.to_s)
+            concat content_tag(:h4, article.title.to_s)
+            concat content_tag(:p, article.text.to_s)
+            concat link_to(article.user.name.to_s, article.user)
+            concat vote_btn(article)
           end)
           concat content_tag(:img, nil, src: article.image.to_s, class: 'img-fluid')
           counter < 3 ? counter += 1 : counter = 0
