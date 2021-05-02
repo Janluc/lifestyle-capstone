@@ -1,12 +1,5 @@
 
-<% if @latest_article %>
-    <div class="w-100 featured-article d-flex align-items-end text-white" style="background: url('<%=@latest_article.image%>')">
-        <div class="latest-article-info m-3 p-3">
-            <h3 class="d-block c-orange f-bold"><%=@latest_article.title%></h3>
-            <p class="d-block"><%=@latest_article.text%></p>
-        </div>
-    </div>
-<% end %>
+<%= upvoted_article(@latest_article) %>
 
 
 <div class="d-flex main-featured">

@@ -18,6 +18,17 @@ module ArticlesHelper
     end
   end
 
+  def upvoted_article(article)
+    if article
+      content_tag(:div, class: %w[w-100 featured-article d-flex align-items-end text-white], style: "background: url('#{article.image}')") do
+        concat(content_tag(:div, class: %w[latest-article-info m-3 p-3]) do
+          concat content_tag(:h3, article.title, class: %w[d-block c-orange f-bold])
+          concat content_tag(:p, article.text, class: %w[d-block])
+        end)
+      end
+    end
+  end
+
   def display_articles(articles, category)
     counter = 0
     articles.collect do |article|
