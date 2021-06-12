@@ -7,10 +7,57 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="main-content">
+      <nav class="navbar bg-light">
+        <div class="navbar-main row">
+          <%=link_to 'MuMag', articles_path, class: "nav-link col-2 d-inline"%>
+          <ul class="col-6 navbar-list text-center">
+            <% main_categories.each do |category|%>
+              <li class="nav-item d-inline"><%=link_to "#{category.name}", category, class: "nav-link d-inline"%></li>
+            <% end %>
+          </ul>
+          <div class="col-4 text-center">
+            <% if logged_in?%>
+              <%= link_to "#{current_user.name}", current_user, class: "nav-link d-inline"%>
+              <%= link_to "Create new Article", new_article_path, class: "nav-link d-inline"%>
+              <%= link_to 'logout', logout_path, method: "post", class: "nav-link d-inline"%>
+              <% else %>
+              <%= link_to 'login', login_path, class: "nav-link d-inline"%>
+              <%= link_to 'sign up', new_user_path, class: "nav-link d-inline"%>
+            <% end %>
+          </div>
+        </div>
+
+      </nav>
+      
+      
+        <%= yield %>
+      </div>
   </body>
+
+  <footer>
+  <div class="main-content">
+    <div class="row">
+      <div class="col-4"><%=link_to 'MuMag', articles_path, class: "nav-link c-orange"%></div>
+      <div class="col-4">
+        <p class="d-inline c-orange">Privacy Policy</p>
+        <p class="d-inline c-orange">Terms and Conditions</p>
+        <p class="d-inline text-white">Copyright</p>
+      </div>
+      <div class="col-4 text-end">
+        <span class="text-white">Contact us</span>
+        <a href="" class="d-inline c-orange">Twitter</a>
+        <a href="" class="d-inline c-orange">FB</a>
+        <a href="" class="d-inline c-orange">IG</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  </footer>
 </html>

@@ -1,0 +1,17 @@
+<h1 class="text-center p-5 c-orange">Login</h1>
+<div class="form-information">
+  <% flash.each do |type, msg| %>
+    <div class="bg-light p-4 my-3 ">
+      <p><%=msg%></p>
+    </div>
+  <% end %>
+  <div class="bg-light px-5 py-1">
+      <%= form_with model: @user, url: 'login', method: :post do |form|%>
+          <p>Username</p>
+          <%= form.text_field :name, class: 'form-control'%>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= form.submit "Login", class: "btn btn-warning m-3" %>
+      <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,7 @@
+<div class="my-4">
+    <h3 class="text-center text-white"><%=@user.name%></h3>
+    <h5 class="text-white">List of articles made by <%=@user.name%>:</h5>
+    <div class="row user-articles">
+        <%= user_articles(@user.articles) %>
+    </div>
+</div>

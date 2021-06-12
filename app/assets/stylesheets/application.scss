@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+article {
+  padding: 0 !important;
+}
+
+@import "bootstrap";
+@import "articles.scss";
+@import "user.scss";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #4e443f;
+  background-size: cover;
+  margin-bottom: 65px;
+}
+
+.c-orange {
+  color: #ed8925;
+}
+
+.f-bold {
+  font-weight: bold;
+}
+
+nav {
+  background-color: #fff;
+
+  a {
+    color: #4f4540;
+  }
+
+  a:hover {
+    color: #ed8925;
+  }
+
+  font-size: 24px;
+}
+
+.navbar {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar-main {
+  width: 100%;
+}
+
+.navbar-list {
+  flex: 1;
+}
+
+.category-info {
+  width: 25em;
+  background-color: #fff;
+}
+
+.row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+.form-information {
+  margin-left: 300px;
+  margin-right: 300px;
+
+  p {
+    font-size: 32px;
+  }
+}
+
+.main-content {
+  margin: 5px;
+}
+
+footer {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+}
